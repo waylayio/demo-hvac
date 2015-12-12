@@ -1,0 +1,5 @@
+{
+  "domain" : "app.waylay.io",
+  "key" : "foo",
+  "secret" : "bar"
+}

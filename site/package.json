@@ -1,0 +1,14 @@
+{
+  "name": "waylay-labs",
+  "private": true,
+  "version": "0.0.1",
+  "description": "The waylay demo site",
+  "repository": "https://github.com/waylayio/demo-hvac",
+  "devDependencies": {
+    "gulp": "~3.8.11",
+    "gulp-connect": "~2.2.0"
+  },
+  "scripts": {
+    "gulp": "node ./node_modules/gulp/bin/gulp.js"
+  }
+}
