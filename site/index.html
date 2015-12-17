@@ -127,23 +127,27 @@
                       <div class="panel-body" style="
                         height: 330px;
                         ">
-                        <div>
-                          <input class="form-control form-control-centered" id="parameter" name="parameter" placeholder="parameter:" style="margin-bottom: 5px;" type="text" value="compressor hours">
-                        </div>
+                          <form role="form">
+                            <div class="form-group">
+                              <label for="selection">Select from list:</label>
+                                <select class="form-control form-control-centered" id="selection">
+                                  <option>Compressor hours</option>
+                                  <option>Revolutions per minute (rpm)</option>
+                                  <option>Condensing temperature</option>
+                                  <option>Evaporating temperature</option>
+                                </select>
+                            </div>
+                          </form>
                         <div>
                           <input class="form-control form-control-centered" id="threshold" name="threshold" placeholder="threshold:" style="margin-bottom: 5px;" type="number" value="10000">
                         </div>
                         <div class="form-group">
                           <label for="thresholdCrossing"></label> 
                           <select class="form-control form-control-centered" id="thresholdCrossing">
-                            <option>
-                              Above
-                            </option>
-                            <option>
-                              Below
-                            </option>
+                            <option>Above</option>
+                            <option>Below</option>
                           </select>
-                        </div>
+                        </div>    
                       </div>
                     </div>
                   </div>
@@ -197,7 +201,7 @@ Kind regards,<br><strong>waylay</strong>
                 <div class="checkbox">
                   <div>
                     <textarea class="form-control form-control-centered" id="data" name="data">
-                    { "compressor hours" : 10010}
+                    { "Compressor hours" : 10010}
                     </textarea>
                   </div>
                 </div>

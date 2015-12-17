@@ -79,6 +79,7 @@ var ctx;
 var domain ="";
 var key = "";
 var password = "";
+var selectionStats = {};
 
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();
@@ -117,7 +118,7 @@ $(document).ready(function(){
 
   var successHandlerAlert = function(info){
     BootstrapDialog.alert(info);
-    $("#notification").fadeOut();
+    //$("#notification").fadeOut();
   };
 
   $("#debug").click(function(e){
@@ -125,7 +126,13 @@ $(document).ready(function(){
     e.preventDefault();
     BootstrapDialog.alert(JSON.stringify(createTemplate()));
     });
+  
+  $("#addSelection").click(function(e){
+    clearMessages();
+    e.preventDefault();
 
+  });
+  
   $("#pushDomain").click(function(e){
     clearMessages();
     e.preventDefault();
@@ -140,6 +147,22 @@ $(document).ready(function(){
     }catch(e){
       errorHandler(e.message);
     }
+  });
+
+  var THR = {
+    "Compressor hours" : 1000,
+    "Revolutions per minute (rpm)" : 2000,
+    "Condensing temperature" : 70,
+    "Evaporating temperature" : 35
+  };
+
+  $("#selection").change(function() {
+      var $this = $(this),
+      value = $this.val();
+      var toSend = {};
+      toSend[value] = ( THR[value] || 100  ) + 1;
+      $('#data').text(JSON.stringify(toSend));
+      $('#threshold').val(THR[value] || 100);
   });
 
   $("#login").click(function(e){
@@ -164,7 +187,8 @@ $(document).ready(function(){
 
   var createTemplate = function() {
     var resource = $('#resource').val();
-    var parameter = $('#parameter').val();
+    var parameter = $( "#selection option:selected" ).text();
+    //var parameter = $('#parameter').val();
     var threshold = $('#threshold').val();
     var thresholdCrossing = $('#thresholdCrossing').val();
     var to = $('#to').val();
@@ -262,11 +286,7 @@ $(document).ready(function(){
     $("#secret" ).change(function() {
         changeSettings();
     });
-
-    $("#alert").click(function() {
-        $("#notification").fadeIn();
-    });
-
+    
     $("#startSimulation").click(function(e){
           e.preventDefault();
           $('#myChartPanel').show();
