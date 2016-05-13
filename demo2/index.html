@@ -1,0 +1,79 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Demo HVAC</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <script src="./scripts/jquery-2.2.3.js"></script>
+        <script src="./scripts/lodash-4.12.0.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src="./scripts/waylay-js.js"></script>
+        <script src="./scripts/app.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+                <h1>Demo HVAC</h1>
+            </div>
+            <div id="formConnect">
+                <div class="row">
+                    <h2>Connect</h2>
+                </div>
+                <div class="row">
+                    <p>
+                        <label for="apiKey">URL</label>
+                        <input type="text" id="txtUrl" class="form-control" placeholder="url" />
+                    </p>
+                    <p>
+                        <label for="apiKey">Api key</label>
+                        <input type="text" id="txtApiKey" class="form-control" placeholder="Api key" />
+                    </p>
+                    <p>
+                        <label for="apiSecret">Api secret</label>
+                        <input type="text" id="txtApiSecret" class="form-control" placeholder="Api secret" />
+                    </p>
+                    <p>
+                        <button id="btnFormConnect" class="btn btn-success btn-lg">Connect</button>
+                    </p>
+                </div>
+            </div>
+            <div id="app">
+                <div class="row">
+                    <span class="btn btn-danger pull-right" id="btnLogout">Logout</span>
+                </div>
+                <div class="row">
+                    <h2>Create task</h2>
+                    <div class="col-lg-3" id="sites">
+                        <div class="row"><h3>Sites</h3></div>
+                        <ul class="row list-group"></ul>
+                    </div>
+                    <div class="col-lg-3 col-lg-offset-1" id="templates">
+                        <div class="row"><h3>Templates</h3></div>
+                        <ul class="row list-group"></ul>
+                    </div>
+                    <div class="col-lg-3 col-lg-offset-1" id="tasks">
+                        <div class="row"><h3>Create Task</h3></div>
+                        <div class="row">
+                            <p>
+                                <input type="text" id="txtName" class="form-control" placeholder="Name" />
+                            </p>
+                            <span class="btn btn-lg btn-primary" id="createTask">Create new task</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <h2>Tasks</h2>
+                    <table class="row table" id="table_tasks">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Site</th>
+                            <th>Template</th>
+                            <th>Created at</th>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
