@@ -226,7 +226,7 @@ $(document).ready(function(){
         actuators : [{
             label: "Mail",
             name: "templateMail",
-            version: "0.0.2",
+            version: "0.0.7",
             position: [492, 156],
             properties: {
                from: "support@waylay.io",
