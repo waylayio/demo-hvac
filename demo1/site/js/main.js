@@ -205,7 +205,7 @@ $(document).ready(function(){
         sensors: [{
             label: "data",
             name: "streamingDataSensor",
-            version: "1.0.9",
+            version: "1.1.3",
             resource: "$",
             position: [245, 205],
             properties: {
@@ -226,7 +226,7 @@ $(document).ready(function(){
         actuators : [{
             label: "Mail",
             name: "templateMail",
-            version: "0.0.7",
+            version: "0.0.8",
             position: [492, 156],
             properties: {
                from: "support@waylay.io",
